@@ -1,0 +1,9 @@
+# Ignore log files
+*.log
+
+# Ignore the screenshots folder
+/screenshots
+
+# Ignore Python compiled files
+*.pyc
+
