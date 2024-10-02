@@ -1,0 +1,15 @@
+version: '3'
+services:
+  selenium-test:
+    build: .
+    image: selenium-test
+    platform: linux/arm64
+    stdin_open: true
+    tty: true
+    environment:
+      - START_XVFB=true
+    volumes:
+      - ./screenshots:/app/screenshots
+    command: ["sh", "-c", "Xvfb :99 -screen 0 1280x1024x24 & python3 automated_test_posit_cloud.py my_login@email my_login_password"]
+    mem_limit: 4g
+
